@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Negative Burn Ventures</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #000;
+            background: #fff;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        header {
+            background: #000;
+            color: #fff;
+            padding: 80px 0;
+            margin-bottom: 0;
+        }
+        
+        header .logo {
+            color: #fff;
+            font-size: 50px;
+            font-weight: 700;
+            letter-spacing: -1.5px;
+            margin-bottom: 28px;
+        }
+        
+        header .tagline {
+            color: #ccc;
+            font-size: 20px;
+            line-height: 1.5;
+            max-width: 650px;
+            font-weight: 400;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+            margin-bottom: 24px;
+        }
+        
+        .tagline {
+            font-size: 18px;
+            color: #666;
+            line-height: 1.6;
+            max-width: 600px;
+        }
+        
+        section {
+            padding: 80px 0;
+            border-bottom: 1px solid #e5e5e5;
+        }
+        
+        section:last-of-type {
+            border-bottom: none;
+        }
+        
+        h2 {
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 32px;
+            color: #000;
+            letter-spacing: -0.5px;
+        }
+        
+        p {
+            margin-bottom: 24px;
+            line-height: 1.7;
+            color: #000;
+        }
+        
+        .partners {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 48px;
+            margin-top: 40px;
+        }
+        
+        .partner {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        
+        .partner-image {
+            width: 64px;
+            height: 64px;
+            background: #f5f5f5;
+            border: 1px solid #e5e5e5;
+            border-radius: 100%;
+        }
+        
+        .partner-name {
+            font-weight: 600;
+            font-size: 18px;
+        }
+        
+        .partner-bio {
+            color: #666;
+            font-size: 15px;
+        }
+        
+        .investment-area {
+            margin-bottom: 32px;
+            padding-bottom: 32px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .investment-area:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        
+        .investment-area strong {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 17px;
+        }
+        
+        .investment-area p {
+            margin: 0;
+            color: #444;
+        }
+        
+        .no-invest-item {
+            margin-bottom: 24px;
+        }
+        
+        .no-invest-item strong {
+            font-weight: 600;
+        }
+        
+        .promise-block {
+            background: #fafafa;
+            border: 1px solid #e5e5e5;
+            padding: 32px;
+            margin: 32px 0;
+            border-radius: 8px;
+            font-size: 15px;
+            line-height: 2;
+            color: #666;
+        }
+        
+        .help-grid {
+            display: grid;
+            gap: 40px;
+            margin: 40px 0;
+        }
+        
+        .help-item {
+            padding-bottom: 32px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .help-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        
+        .help-item strong {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            font-size: 17px;
+        }
+        
+        .help-item p {
+            margin: 0;
+            color: #444;
+        }
+        
+        .highlight-message {
+            background: #000;
+            color: #fff;
+            padding: 48px;
+            margin: 48px -24px 0;
+            border-radius: 12px;
+        }
+        
+        .highlight-message p {
+            color: #fff;
+            margin: 0;
+            font-size: 17px;
+            line-height: 1.8;
+        }
+        
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 24px;
+            margin-top: 40px;
+        }
+        
+        .portfolio-item {
+            text-align: center;
+            padding: 32px 16px;
+            border: 1px solid #e5e5e5;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+        
+        .portfolio-item:hover {
+            border-color: #000;
+            transform: translateY(-2px);
+        }
+        
+        .portfolio-logo {
+            width: 48px;
+            height: 48px;
+            background: #f5f5f5;
+            margin: 0 auto 16px;
+            border-radius: 8px;
+        }
+        
+        .portfolio-category {
+            font-size: 12px;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .name-section {
+            background: #f8f8f8;
+        }
+        
+        footer {
+            padding: 80px 0 40px;
+            text-align: center;
+            color: #999;
+            font-size: 14px;
+            border-top: 1px solid #e5e5e5;
+        }
+        
+        @media (max-width: 640px) {
+            header {
+                padding: 48px 0;
+            }
+            
+            section {
+                padding: 48px 0;
+            }
+            
+            .highlight-message {
+                margin: 32px -16px 0;
+                padding: 32px 24px;
+            }
+            
+            .portfolio-grid {
+                grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo">Negative Burn Ventures</h1>
+            <p class="tagline">Early seed and pre-seed stage fund. We write $250,000 to $500,000 checks into exciting early-stage software companies.</p>
+        </div>
+    </header>
+    
+    <main>
+        <section>
+            <div class="container">
+                <h2>What We Invest In</h2>
+                <p>We're typically one of the first checks in, but we'll also go a little bit later if it's a deal we can get excited about. At the end of the day, we have complete discretion on what we invest in, no handcuffs from limited partners. That being said, we focus almost exclusively on B2B software where you can sell a small number of large contracts to customers who never cancel. Here are a few areas that we happen to be interested in at the moment:</p>
+                
+                <div class="investment-area">
+                    <strong>Government Software</strong>
+                    <p>Tough to sell to but never cancels. Plus we have a general disdain for the government's wasteful spending, so if we can make money off Uncle Sam, we're a fan. </p>
+                </div>
+                
+                <div class="investment-area">
+                    <strong>Healthcare</strong>
+                    <p>A mess of an industry that scares 99% of people away. That's what we like about it.</p>
+                </div>
+                
+                <div class="investment-area">
+                    <strong>Marketing Software</strong>
+                    <p>We are performance marketing geeks with a vast network and really get excited about that kind of stuff.</p>
+                </div>
+                
+                <div class="investment-area">
+                    <strong>Dev Tools</strong>
+                    <p>Spent over a decade building software. Love anything that helps developers.</p>
+                </div>
+                
+                <div class="investment-area">
+                    <strong>Vertical Software</strong>
+                    <p>We're kind of breaking our own rule here on the whole "large contracts" thing, but having built one of the biggest home services businesses in the country, we understand vertical software really well and are willing to hop on the right opportunity.</p>
+                </div>
+
+                <div class="investment-area">
+                    <strong>Areas of Market Distortion</strong>
+                    <p>Whenever there's something that messes with free markets, we see opportunity. Think government incentives, regulations, insurance </p>
+                </div>
+                
+                <div style="margin-top: 48px;">
+                    <h3 style="font-size: 18px; font-weight: 600; margin-bottom: 24px; color: #666;">Things We Don't Invest In</h3>
+                    
+                    <div class="no-invest-item" style="display: flex; align-items: flex-start; gap: 12px;">
+                        <span style="color: #999; font-size: 20px; line-height: 1;">×</span>
+                        <div>
+                            <strong>Consumer companies</strong> - Even though that's our background, we have too many battle scars to be investors in it.
+                        </div>
+                    </div>
+                    
+                    <div class="no-invest-item" style="display: flex; align-items: flex-start; gap: 12px;">
+                        <span style="color: #999; font-size: 20px; line-height: 1;">×</span>
+                        <div>
+                            <strong>Non-technology plays</strong> - Sneakers, office space, and meal kits are great but at the end of the day, they were never going to be 80% gross margin businesses. So we can't pay venture prices for things like this.
+                        </div>
+                    </div>
+                    
+                    <div class="no-invest-item" style="display: flex; align-items: flex-start; gap: 12px;">
+                        <span style="color: #999; font-size: 20px; line-height: 1;">×</span>
+                        <div>
+                            <strong>Stuff we don't understand</strong> - There's a lot of things that are probably great businesses, but if we can't wrap our head around it at the end of the day, it's a pass. This precludes us from investing in probably some really cool deep tech and biotech stuff, but if we don't get it, it's not for us.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <div class="container">
+                <h2>About Us</h2>
+                <div style="display: flex; flex-direction: column; gap: 60px; margin-top: 40px;">
+                    <div style="display: flex; gap: 32px; align-items: flex-start;">
+                        <div style="width: 25%; min-width: 150px; height: 200px; background: #f5f5f5; border: 1px solid #e5e5e5; border-radius: 8px; flex-shrink: 0;"></div>
+                        <div style="flex: 1;">
+                            <div style="font-weight: 600; font-size: 24px; color: #000; margin-bottom: 16px;">Ryan Farley</div>
+                            <div style="color: #666; font-size: 16px; line-height: 1.7;">[Bio placeholder - Add your background, experience, what you bring to founders, previous companies built/invested in, areas of expertise, etc. This can be several paragraphs long.]</div>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 32px; align-items: flex-start;">
+                        <div style="width: 25%; min-width: 150px; height: 200px; background: #f5f5f5; border: 1px solid #e5e5e5; border-radius: 8px; flex-shrink: 0;"></div>
+                        <div style="flex: 1;">
+                            <div style="font-weight: 600; font-size: 24px; color: #000; margin-bottom: 16px;">Ryan Dodge</div>
+                            <div style="color: #666; font-size: 16px; line-height: 1.7;">[Bio placeholder - Add your background, experience, what you bring to founders, previous companies built/invested in, areas of expertise, etc. This can be several paragraphs long.]</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <div class="container">
+                <h2>Why Us</h2>
+                
+                <p>Most investors try just a little too hard to 'add value'. They end up being at best a pain in the ass, and at worst incredibly destructive.</p>
+                
+                <p>Our goal first and foremost, is to not do that.</p>
+                
+                <div class="promise-block">
+                    <strong style="color: #000;">Annoying Stuff We Promise Not to Do</strong><br>
+                    • Forward you emails of your competitors' press releases with the caption 'thoughts?'<br>
+                    • Ask stupid questions like "have you considered raising prices?"<br>
+                    • Make unsolicited intros to consultants with the not-so-subtle implication that you need help<br>
+                    • Make unsolicited introductions period<br>
+                    • Send you on stupid wild goosechases like 'refining your brand identity'<br>
+                    • Give information about you to others without asking your permission first<br>
+                    • Act like we know even a fraction of what you do about your industry
+                </div>
+                
+                <p><strong>What you're doing is hard enough. The last thing you need is an investor who makes it harder.</strong></p>
+            </div>
+        </section>
+        
+        <section>
+            <div class="container">
+                <h2>Ways We Can Actually Help</h2>
+                
+                <p>While our goal first and foremost is to not be a pain, there are a few areas that others have found us to be helpful in.</p>
+                
+                <div class="help-grid">
+                    <div class="help-item">
+                        <strong>Performance Marketing</strong>
+                        <p>SEO, paid search, paid social, automation, outbound email campaigns, conversion rate optimization - that's something we are top percentile at.</p>
+                    </div>
+                    
+                    <div class="help-item">
+                        <strong>Data</strong>
+                        <p>It's not uncommon for us to be writing SQL and creating Tableau views for companies. You're short staffed, and we're pretty good at it, so why not?</p>
+                    </div>
+                    
+                    <div class="help-item">
+                        <strong>Getting the Story Ready for the Next Round</strong>
+                        <p>Another thing we happen to be really good at.</p>
+                    </div>
+                    
+                    <div class="help-item">
+                        <strong>Recruiting</strong>
+                        <p>This is something we are exceptional at. Both at getting talent in the funnel, and running a process to build a great team and avoid mishires (80% of this is just follow the book Who by Geoff Smart).</p>
+                    </div>
+                    
+                    <div class="help-item">
+                        <strong>International Hiring</strong>
+                        <p>Even post covid people will tell you hiring international doesn't work. They're wrong. We can help you find smarter, harder working people at a fraction of the price.</p>
+                    </div>
+                    
+                    <div class="help-item">
+                        <strong>All the Boring Stuff</strong>
+                        <p>How to run a hiring process, how to do quarterly planning, how to setup quickbooks, what compliance crap is really needed. What I wish someone had told me.</p>
+                    </div>
+                </div>
+                
+                <div class="highlight-message">
+                    <p>Most importantly, we know firsthand that building a startup is brutal. You'll have more losses than wins, and more bad days than good. And some of those bad days can be really bad - we've been there before. We know that this is part of the game, and you can talk about the bad stuff anytime. Need someone to rant about an employee issue on a Friday night? That's us. Funding round fall through? Let us know.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <div class="container">
+                <h2>Past Investments</h2>
+                
+                <p>• BuildBuddy - Software Development, Pre-Seed<br>
+                • Atlas Wearables - Technology, Seed<br>
+                • Super - Travel, Seed<br>
+                • QuickPark Solutions - Technology, Pre-Seed<br>
+                • Clever AI - Artificial Intelligence, Pre-Seed</p>
+            </div>
+        </section>
+        
+        <section class="name-section">
+            <div class="container">
+                <h2>What's up with the name 'Negative Burn'?</h2>
+                
+                <p>A company we invested in - that was and is doing spectacularly well - sent an investor update after reaching profitability. In the summary metrics, instead of writing "cash flow" or "profit," they wrote "burn" with a negative number. We found it both funny, and emblematic of the lack of fundamental business thinking in startups. So we decided to name our fund after it.</p>
+                
+                <p>Don't get us wrong—there's absolutely a time and place to burn capital for growth. We're here to swing for the fences. But we prefer investing in founders who know the difference between investing in growth and lighting money on fire. There's a big difference in investing in the future ahead of profits, and hiring the Chainsmokers for your company holiday party.</p>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>© 2025 Negative Burn Ventures</p>
+        </div>
+    </footer>
+</body>
+</html>
